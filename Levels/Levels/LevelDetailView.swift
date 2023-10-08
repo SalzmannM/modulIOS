@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LevelDetailView: View {
+    @State var showLevel:Bool = false
     var body: some View {
         ScrollView {
             Image(ImageResource.level)
@@ -42,6 +43,18 @@ struct LevelDetailView: View {
             }
             .padding()
             VStack {
+                Button {
+                    showLevel = true
+                } label: {
+                    Image(systemName: "play")
+                        .font(.title2)
+                    Text("Level starten")
+                }
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                Spacer()
+            }
+            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+            VStack {
                 Text("Das erste Rästel")
                     .font(.title2)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -64,8 +77,12 @@ struct LevelDetailView: View {
                 .blur(radius: 20)
                 .opacity(0.2)
         }
+        .fullScreenCover(isPresented: $showLevel) {
+            HangmanLevelView(showLevel: $showLevel)
+        }
     }
 }
+    
 
 struct LevelDetailView_Previews: PreviewProvider {
     static var previews: some View {
