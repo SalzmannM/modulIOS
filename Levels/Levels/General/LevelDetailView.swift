@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct LevelDetailView: View {
     @State var showLevel:Bool = false
+    @Environment(LevelState.self) private var levelState
+    
     let level:Level
     
     var body: some View {
+        @Bindable var levelState = levelState
+
         ScrollView {
             level.titleImage
                 .resizable()
@@ -44,9 +49,10 @@ struct LevelDetailView: View {
                 }
             }
             .padding()
+            
             VStack {
                 Button {
-                    showLevel = true
+                    levelState.startLevel(level)
                 } label: {
                     Image(systemName: "play")
                         .font(.title2)
@@ -56,6 +62,7 @@ struct LevelDetailView: View {
                 Spacer()
             }
             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+            
             VStack {
                 Text(level.title)
                     .font(.title2)
@@ -68,6 +75,8 @@ struct LevelDetailView: View {
                     .font(.caption)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding([.leading,.bottom])
+                // TODO: Uncomment once this file exists in your project
+                // LevelAttemptDetailsView(level: level)
             }
             .background(Material.regular)
             .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -84,6 +93,11 @@ struct LevelDetailView: View {
         .fullScreenCover(isPresented: $showLevel) {
             NavigationStack {
                AnyView(erasing: level.view)
+                    .toolbar {
+                        Button("Abbrechen") {
+                            levelState.failureOrCancel()
+                        }
+                    }
            }
         }
     }

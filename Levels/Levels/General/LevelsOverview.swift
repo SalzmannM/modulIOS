@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct LevelsOverview: View {
+    @Query(filter: #Predicate<LevelAttempt> { $0.isSuccess }, sort: \.startTime, order: .reverse) private var successfulAttempts: [LevelAttempt]
+    
     var body: some View {
         NavigationStack {
             ScrollView {

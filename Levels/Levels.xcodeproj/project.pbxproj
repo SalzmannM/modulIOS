@@ -20,6 +20,9 @@
 		9B2D63712AC067C10077FF37 /* RankingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2D63702AC067C10077FF37 /* RankingListView.swift */; };
 		9B2D63732AC0767F0077FF37 /* LevelDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2D63722AC0767F0077FF37 /* LevelDetailView.swift */; };
 		9B44C5312ADC70BD0077A37F /* TictactoeLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B44C5302ADC70BD0077A37F /* TictactoeLevelView.swift */; };
+		9B6141642AE5BD290099F044 /* LevelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6141632AE5BD290099F044 /* LevelState.swift */; };
+		9B6141662AE5BD4B0099F044 /* SwiftDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6141652AE5BD4B0099F044 /* SwiftDataManager.swift */; };
+		9B6141682AE5BDA20099F044 /* LevelAttempt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6141672AE5BDA20099F044 /* LevelAttempt.swift */; };
 		9B6669B72AE5719A002A7914 /* LevelsOverviewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6669B62AE5719A002A7914 /* LevelsOverviewItemView.swift */; };
 		9B873EE52AE5461E002CD24A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B873EE42AE5461E002CD24A /* SettingsView.swift */; };
 		9B873EE72AE54634002CD24A /* LevelsOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B873EE62AE54634002CD24A /* LevelsOverview.swift */; };
@@ -40,6 +43,9 @@
 		9B2D63702AC067C10077FF37 /* RankingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingListView.swift; sourceTree = "<group>"; };
 		9B2D63722AC0767F0077FF37 /* LevelDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDetailView.swift; sourceTree = "<group>"; };
 		9B44C5302ADC70BD0077A37F /* TictactoeLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TictactoeLevelView.swift; sourceTree = "<group>"; };
+		9B6141632AE5BD290099F044 /* LevelState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelState.swift; sourceTree = "<group>"; };
+		9B6141652AE5BD4B0099F044 /* SwiftDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDataManager.swift; sourceTree = "<group>"; };
+		9B6141672AE5BDA20099F044 /* LevelAttempt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelAttempt.swift; sourceTree = "<group>"; };
 		9B6669B62AE5719A002A7914 /* LevelsOverviewItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsOverviewItemView.swift; sourceTree = "<group>"; };
 		9B873EE42AE5461E002CD24A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9B873EE62AE54634002CD24A /* LevelsOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsOverview.swift; sourceTree = "<group>"; };
@@ -78,6 +84,7 @@
 				9B2D63602AC05FEF0077FF37 /* LevelsApp.swift */,
 				9BE037362AD973FD009080DD /* General */,
 				9BE037352AD97350009080DD /* Levels */,
+				9B61415C2AE5AFB50099F044 /* Trials */,
 				9BE037372AD97409009080DD /* Ranking */,
 				9B2D63642AC05FF10077FF37 /* Assets.xcassets */,
 				9B2D63662AC05FF10077FF37 /* Preview Content */,
@@ -91,6 +98,15 @@
 				9B2D63672AC05FF10077FF37 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9B61415C2AE5AFB50099F044 /* Trials */ = {
+			isa = PBXGroup;
+			children = (
+				9B6141672AE5BDA20099F044 /* LevelAttempt.swift */,
+				9B6141652AE5BD4B0099F044 /* SwiftDataManager.swift */,
+			);
+			path = Trials;
 			sourceTree = "<group>";
 		};
 		9BE037352AD97350009080DD /* Levels */ = {
@@ -111,6 +127,7 @@
 				9B0223952AD5F5F100D78EB1 /* Level.swift */,
 				9B2D63722AC0767F0077FF37 /* LevelDetailView.swift */,
 				9B873EE42AE5461E002CD24A /* SettingsView.swift */,
+				9B6141632AE5BD290099F044 /* LevelState.swift */,
 				9B873EE62AE54634002CD24A /* LevelsOverview.swift */,
 				9B1BD27F2AE569770060D502 /* UserSettings.swift */,
 				9B6669B62AE5719A002A7914 /* LevelsOverviewItemView.swift */,
@@ -204,8 +221,11 @@
 				9B873EE72AE54634002CD24A /* LevelsOverview.swift in Sources */,
 				9B2D63732AC0767F0077FF37 /* LevelDetailView.swift in Sources */,
 				9B2D63632AC05FEF0077FF37 /* ContentView.swift in Sources */,
+				9B6141662AE5BD4B0099F044 /* SwiftDataManager.swift in Sources */,
+				9B6141682AE5BDA20099F044 /* LevelAttempt.swift in Sources */,
 				9B1BD2802AE569770060D502 /* UserSettings.swift in Sources */,
 				9B0223912AD5F2DF00D78EB1 /* HangmanLevelView.swift in Sources */,
+				9B6141642AE5BD290099F044 /* LevelState.swift in Sources */,
 				9B2D63712AC067C10077FF37 /* RankingListView.swift in Sources */,
 				9B2D63612AC05FEF0077FF37 /* LevelsApp.swift in Sources */,
 				9B2D636F2AC0633A0077FF37 /* RankingPlayerView.swift in Sources */,

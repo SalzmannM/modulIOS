@@ -15,7 +15,7 @@ let toggleLevel = Level(id: "levels.maerki.toggles",
                         view: ToggleLevelView())
 
 struct ToggleLevelView: View {
-    @Environment(\.dismiss) private var dismiss
+    @Environment(LevelState.self) private var levelState
 
     @State private var toggle1 = false
     @State private var toggle2 = false
@@ -41,6 +41,7 @@ struct ToggleLevelView: View {
                 }
                 else if sum == 42 {
                     Text("Richtig")
+                    levelState.success()
                 }
                 else {
                     Text("Nahe dran")
@@ -70,11 +71,6 @@ struct ToggleLevelView: View {
             Toggle(isOn: $toggle8, label: {
                 Text("Schalter 8")
             })
-        }
-        .toolbar {
-            Button("Abbrechen") {
-                dismiss()
-            }
         }
     }
 }

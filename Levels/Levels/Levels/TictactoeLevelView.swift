@@ -15,7 +15,7 @@ let tictactoeLevel = Level(id: "levels.salzmann.tictactoe",
                            view: TictactoeLevelView())
 
 struct TictactoeLevelView: View {
-    @Environment(\.dismiss) private var dismiss
+    @Environment(LevelState.self) private var levelState
     
     private let winningCoordinates = [
         // horizontal
@@ -108,26 +108,22 @@ struct TictactoeLevelView: View {
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .foregroundStyle(Color.black)
                     .transition(.move(edge: .leading).combined(with: .opacity))
+                levelState.failureOrCancel()
             } else if winner == "X" {
                 Text("Spieler: **\(String(winner))** hat gewonnen!")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .foregroundStyle(Color.green)
                     .transition(.move(edge: .leading).combined(with: .opacity))
+                levelState.success()
             } else if winner == "O" {
                 Text("Spieler: **\(String(winner))** hat gewonnen!")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .foregroundStyle(Color.blue)
                     .transition(.move(edge: .trailing).combined(with: .opacity))
+                levelState.failureOrCancel()
             }
         }
         .frame(maxWidth: .infinity)
-        .toolbar {
-            Button("Schliessen") {
-                dismiss()
-            }
-            .frame(maxWidth: .infinity, alignment: .trailing)
-            .padding(.trailing, 8)
-        }
     }
     
     private func checkEnd() {
