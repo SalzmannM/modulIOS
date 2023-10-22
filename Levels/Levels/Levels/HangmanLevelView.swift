@@ -7,6 +7,13 @@
 
 import SwiftUI
 
+let hangmanLevel = Level(id: "levels.salzmann.hangman",
+                         title: "Das Hangman-Level",
+                         author: "Maurice",
+                         description: "Spielerisches Rätsel, dass Wissen und Experimentiergeist verlangt.",
+                         titleImage: Image(ImageResource.level),
+                         view: HangmanLevelView())
+
 private let asciiHangman = [
         """
            +-------+
@@ -120,7 +127,7 @@ private let wordList = [
 ]
 
 struct HangmanLevelView: View {
-    @Binding var showLevel:Bool
+    @Environment(\.dismiss) private var dismiss 
     
     @State var remainingTries:Int = 7
     @State var guessedLetters:Set<Character> = []
@@ -158,14 +165,6 @@ struct HangmanLevelView: View {
 
     var body: some View {
         VStack {
-            Button {
-                showLevel = false
-            } label: {
-                Text("Schliessen")
-            }
-            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .trailing)
-            .padding(.trailing, 8)
-            
             Text("Hangman")
                 .font(.largeTitle)
                 .padding(.bottom, 30)
@@ -215,9 +214,18 @@ struct HangmanLevelView: View {
             Spacer()
         }
         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+        .toolbar {
+            Button("Schliessen") {
+                dismiss()
+            }
+            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .trailing)
+            .padding(.trailing, 8)
+        }
     }
 }
 
 #Preview {
-    HangmanLevelView(showLevel: .constant(true))
+    NavigationView {
+        HangmanLevelView()
+    }
 }

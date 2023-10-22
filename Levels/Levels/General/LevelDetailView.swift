@@ -9,9 +9,11 @@ import SwiftUI
 
 struct LevelDetailView: View {
     @State var showLevel:Bool = false
+    let level:Level
+    
     var body: some View {
         ScrollView {
-            Image(ImageResource.level)
+            level.titleImage
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(minWidth: 0, minHeight: 0)
@@ -55,14 +57,14 @@ struct LevelDetailView: View {
             }
             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
             VStack {
-                Text("Das erste Rästel")
+                Text(level.title)
                     .font(.title2)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding([.top,.leading])
-                Text("Hier wird eine kurze Beschreibung stehen. Fürs erste ist es bloss Text.")
+                Text(level.description)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding([.leading])
-                Text("Von **Maurice**")
+                Text("Von **\(level.author)**")
                     .font(.caption)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding([.leading,.bottom])
@@ -77,8 +79,12 @@ struct LevelDetailView: View {
                 .blur(radius: 20)
                 .opacity(0.2)
         }
+        .navigationTitle(level.title)
+        .navigationBarTitleDisplayMode(.inline)
         .fullScreenCover(isPresented: $showLevel) {
-            HangmanLevelView(showLevel: $showLevel)
+            NavigationStack {
+               AnyView(erasing: level.view)
+           }
         }
     }
 }
@@ -86,6 +92,6 @@ struct LevelDetailView: View {
 
 struct LevelDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        LevelDetailView()
+        LevelDetailView(level: textLevel)
     }
 }

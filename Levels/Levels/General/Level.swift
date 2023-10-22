@@ -20,5 +20,5 @@ struct Level: Identifiable {
 let allLevels: [Level] = [
     textLevel,
     toggleLevel,
-    // hangmanLevel,
+    hangmanLevel,
 ]

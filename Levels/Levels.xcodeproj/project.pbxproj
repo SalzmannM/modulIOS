@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B0223912AD5F2DF00D78EB1 /* HangmanLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0223902AD5F2DF00D78EB1 /* HangmanLevelView.swift */; };
+		9B0223932AD5F59A00D78EB1 /* TextLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0223922AD5F59A00D78EB1 /* TextLevelView.swift */; };
+		9B0223962AD5F5F100D78EB1 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0223952AD5F5F100D78EB1 /* Level.swift */; };
+		9B0223982AD5F60B00D78EB1 /* ToggleLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0223972AD5F60B00D78EB1 /* ToggleLevelView.swift */; };
+		9B1BD2802AE569770060D502 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BD27F2AE569770060D502 /* UserSettings.swift */; };
 		9B2D63612AC05FEF0077FF37 /* LevelsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2D63602AC05FEF0077FF37 /* LevelsApp.swift */; };
 		9B2D63632AC05FEF0077FF37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2D63622AC05FEF0077FF37 /* ContentView.swift */; };
 		9B2D63652AC05FF10077FF37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B2D63642AC05FF10077FF37 /* Assets.xcassets */; };
@@ -14,9 +19,18 @@
 		9B2D636F2AC0633A0077FF37 /* RankingPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2D636E2AC0633A0077FF37 /* RankingPlayerView.swift */; };
 		9B2D63712AC067C10077FF37 /* RankingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2D63702AC067C10077FF37 /* RankingListView.swift */; };
 		9B2D63732AC0767F0077FF37 /* LevelDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2D63722AC0767F0077FF37 /* LevelDetailView.swift */; };
+		9B44C5312ADC70BD0077A37F /* TictactoeLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B44C5302ADC70BD0077A37F /* TictactoeLevelView.swift */; };
+		9B6669B72AE5719A002A7914 /* LevelsOverviewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6669B62AE5719A002A7914 /* LevelsOverviewItemView.swift */; };
+		9B873EE52AE5461E002CD24A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B873EE42AE5461E002CD24A /* SettingsView.swift */; };
+		9B873EE72AE54634002CD24A /* LevelsOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B873EE62AE54634002CD24A /* LevelsOverview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B0223902AD5F2DF00D78EB1 /* HangmanLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangmanLevelView.swift; sourceTree = "<group>"; };
+		9B0223922AD5F59A00D78EB1 /* TextLevelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextLevelView.swift; sourceTree = "<group>"; };
+		9B0223952AD5F5F100D78EB1 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		9B0223972AD5F60B00D78EB1 /* ToggleLevelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleLevelView.swift; sourceTree = "<group>"; };
+		9B1BD27F2AE569770060D502 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		9B2D635D2AC05FEF0077FF37 /* Levels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Levels.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B2D63602AC05FEF0077FF37 /* LevelsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsApp.swift; sourceTree = "<group>"; };
 		9B2D63622AC05FEF0077FF37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -25,6 +39,10 @@
 		9B2D636E2AC0633A0077FF37 /* RankingPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingPlayerView.swift; sourceTree = "<group>"; };
 		9B2D63702AC067C10077FF37 /* RankingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingListView.swift; sourceTree = "<group>"; };
 		9B2D63722AC0767F0077FF37 /* LevelDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDetailView.swift; sourceTree = "<group>"; };
+		9B44C5302ADC70BD0077A37F /* TictactoeLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TictactoeLevelView.swift; sourceTree = "<group>"; };
+		9B6669B62AE5719A002A7914 /* LevelsOverviewItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsOverviewItemView.swift; sourceTree = "<group>"; };
+		9B873EE42AE5461E002CD24A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		9B873EE62AE54634002CD24A /* LevelsOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsOverview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,12 +76,11 @@
 			isa = PBXGroup;
 			children = (
 				9B2D63602AC05FEF0077FF37 /* LevelsApp.swift */,
-				9B2D63622AC05FEF0077FF37 /* ContentView.swift */,
+				9BE037362AD973FD009080DD /* General */,
+				9BE037352AD97350009080DD /* Levels */,
+				9BE037372AD97409009080DD /* Ranking */,
 				9B2D63642AC05FF10077FF37 /* Assets.xcassets */,
 				9B2D63662AC05FF10077FF37 /* Preview Content */,
-				9B2D636E2AC0633A0077FF37 /* RankingPlayerView.swift */,
-				9B2D63702AC067C10077FF37 /* RankingListView.swift */,
-				9B2D63722AC0767F0077FF37 /* LevelDetailView.swift */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -74,6 +91,40 @@
 				9B2D63672AC05FF10077FF37 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9BE037352AD97350009080DD /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				9B0223902AD5F2DF00D78EB1 /* HangmanLevelView.swift */,
+				9B0223922AD5F59A00D78EB1 /* TextLevelView.swift */,
+				9B0223972AD5F60B00D78EB1 /* ToggleLevelView.swift */,
+				9B44C5302ADC70BD0077A37F /* TictactoeLevelView.swift */,
+			);
+			path = Levels;
+			sourceTree = "<group>";
+		};
+		9BE037362AD973FD009080DD /* General */ = {
+			isa = PBXGroup;
+			children = (
+				9B2D63622AC05FEF0077FF37 /* ContentView.swift */,
+				9B0223952AD5F5F100D78EB1 /* Level.swift */,
+				9B2D63722AC0767F0077FF37 /* LevelDetailView.swift */,
+				9B873EE42AE5461E002CD24A /* SettingsView.swift */,
+				9B873EE62AE54634002CD24A /* LevelsOverview.swift */,
+				9B1BD27F2AE569770060D502 /* UserSettings.swift */,
+				9B6669B62AE5719A002A7914 /* LevelsOverviewItemView.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		9BE037372AD97409009080DD /* Ranking */ = {
+			isa = PBXGroup;
+			children = (
+				9B2D63702AC067C10077FF37 /* RankingListView.swift */,
+				9B2D636E2AC0633A0077FF37 /* RankingPlayerView.swift */,
+			);
+			path = Ranking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,7 +158,7 @@
 					player,
 				);
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					9B2D635C2AC05FEF0077FF37 = {
 						CreatedOnToolsVersion = 14.3;
@@ -149,11 +200,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B44C5312ADC70BD0077A37F /* TictactoeLevelView.swift in Sources */,
+				9B873EE72AE54634002CD24A /* LevelsOverview.swift in Sources */,
 				9B2D63732AC0767F0077FF37 /* LevelDetailView.swift in Sources */,
 				9B2D63632AC05FEF0077FF37 /* ContentView.swift in Sources */,
+				9B1BD2802AE569770060D502 /* UserSettings.swift in Sources */,
+				9B0223912AD5F2DF00D78EB1 /* HangmanLevelView.swift in Sources */,
 				9B2D63712AC067C10077FF37 /* RankingListView.swift in Sources */,
 				9B2D63612AC05FEF0077FF37 /* LevelsApp.swift in Sources */,
 				9B2D636F2AC0633A0077FF37 /* RankingPlayerView.swift in Sources */,
+				9B0223962AD5F5F100D78EB1 /* Level.swift in Sources */,
+				9B0223932AD5F59A00D78EB1 /* TextLevelView.swift in Sources */,
+				9B0223982AD5F60B00D78EB1 /* ToggleLevelView.swift in Sources */,
+				9B873EE52AE5461E002CD24A /* SettingsView.swift in Sources */,
+				9B6669B72AE5719A002A7914 /* LevelsOverviewItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +224,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -196,6 +257,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -210,7 +272,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -224,6 +286,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -256,6 +319,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -264,7 +328,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
