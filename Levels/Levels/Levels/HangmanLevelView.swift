@@ -8,7 +8,7 @@
 import SwiftUI
 
 let hangmanLevel = Level(id: "levels.salzmann.hangman",
-                         title: "Das Hangman-Level",
+                         title: "Hangman",
                          author: "Maurice",
                          description: "Spielerisches Rätsel, dass Wissen und Experimentiergeist verlangt.",
                          titleImage: Image(ImageResource.level),
@@ -165,9 +165,6 @@ struct HangmanLevelView: View {
 
     var body: some View {
         VStack {
-            Text("Hangman")
-                .font(.largeTitle)
-                .padding(.bottom, 30)
             Text(asciiHangman[7-remainingTries])
                 .font(.title)
                 .monospaced()

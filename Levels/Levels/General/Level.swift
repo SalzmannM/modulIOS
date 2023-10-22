@@ -21,4 +21,5 @@ let allLevels: [Level] = [
     textLevel,
     toggleLevel,
     hangmanLevel,
+    tictactoeLevel
 ]
