@@ -41,7 +41,6 @@ struct ToggleLevelView: View {
                 }
                 else if sum == 42 {
                     Text("Richtig")
-                    levelState.success()
                 }
                 else {
                     Text("Nahe dran")
@@ -72,6 +71,11 @@ struct ToggleLevelView: View {
                 Text("Schalter 8")
             })
         }
+        .onChange(of: sum, { _, newValue in
+            if newValue == 42 {
+                levelState.success()
+            }
+        })
     }
 }
 
@@ -80,11 +84,6 @@ struct ToggleLevelView: View {
 #Preview {
     NavigationView(content: {
         ToggleLevelView()
-            .toolbar {
-                Button("Abbrechen") {
-
-                }
-
-            }
+            .environment(LevelState())
     })
 }

@@ -127,7 +127,7 @@ private let wordList = [
 ]
 
 struct HangmanLevelView: View {
-    @Environment(LevelState.self) private var levelState
+    @Environment(LevelState.self) private var levelState: LevelState
     
     @State var remainingTries:Int = 7
     @State var guessedLetters:Set<Character> = []
@@ -178,13 +178,16 @@ struct HangmanLevelView: View {
                 if wordToGuess == calculatedWord {
                     Text( "Geschafft, bravo!")
                         .foregroundStyle(.green)
-                    levelState.succes()
                 } else if remainingTries == 0 {
                     Text( "Leider nicht geschafft... \n Gesuchtes Wort: \(wordToGuess.map{ "\($0)" }.joined(separator: " "))")
                         .foregroundStyle(.red)
-                    levelState.failureOrCancel()
                 }
             }
+            .onChange(of: calculatedWord, { _, newValue in
+                if newValue == wordToGuess {
+                    levelState.success()
+                }
+            })
             .padding(5)
             .background(Material.regular)
             .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -219,5 +222,6 @@ struct HangmanLevelView: View {
 #Preview {
     NavigationView {
         HangmanLevelView()
+            .environment(LevelState())
     }
 }

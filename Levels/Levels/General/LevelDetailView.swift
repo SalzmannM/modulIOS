@@ -6,10 +6,10 @@
 //
 
 import SwiftUI
+import Charts
 import SwiftData
 
 struct LevelDetailView: View {
-    @State var showLevel:Bool = false
     @Environment(LevelState.self) private var levelState
     
     let level:Level
@@ -75,8 +75,7 @@ struct LevelDetailView: View {
                     .font(.caption)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding([.leading,.bottom])
-                // TODO: Uncomment once this file exists in your project
-                // LevelAttemptDetailsView(level: level)
+                LevelAttemptDetailsView(level: level)
             }
             .background(Material.regular)
             .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -84,13 +83,13 @@ struct LevelDetailView: View {
             .padding()
         }
         .background {
-            Image(ImageResource.level)
+            level.titleImage
                 .blur(radius: 20)
                 .opacity(0.2)
         }
         .navigationTitle(level.title)
         .navigationBarTitleDisplayMode(.inline)
-        .fullScreenCover(isPresented: $showLevel) {
+        .fullScreenCover(item: $levelState.currentLevel) { level in
             NavigationStack {
                AnyView(erasing: level.view)
                     .toolbar {
@@ -107,5 +106,7 @@ struct LevelDetailView: View {
 struct LevelDetailView_Previews: PreviewProvider {
     static var previews: some View {
         LevelDetailView(level: textLevel)
+            .environment(LevelState())
+            .modelContainer(SwiftDataManager.shared.modelContainer)
     }
 }

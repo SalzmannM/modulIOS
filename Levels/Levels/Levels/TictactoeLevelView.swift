@@ -15,7 +15,7 @@ let tictactoeLevel = Level(id: "levels.salzmann.tictactoe",
                            view: TictactoeLevelView())
 
 struct TictactoeLevelView: View {
-    @Environment(LevelState.self) private var levelState
+    @Environment(LevelState.self) private var levelState: LevelState
     
     private let winningCoordinates = [
         // horizontal
@@ -102,25 +102,29 @@ struct TictactoeLevelView: View {
                     }
                 }
             }
+            .onChange(of: winner, { _, newValue in
+                if newValue == "X" {
+                    levelState.success()
+                } else {
+                    levelState.failureOrCancel()
+                }
+            })
             
             if move == 9 && winner == "_" {
                 Text("Spiel endet Unentschieden!")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .foregroundStyle(Color.black)
                     .transition(.move(edge: .leading).combined(with: .opacity))
-                levelState.failureOrCancel()
             } else if winner == "X" {
                 Text("Spieler: **\(String(winner))** hat gewonnen!")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .foregroundStyle(Color.green)
                     .transition(.move(edge: .leading).combined(with: .opacity))
-                levelState.success()
             } else if winner == "O" {
                 Text("Spieler: **\(String(winner))** hat gewonnen!")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .foregroundStyle(Color.blue)
                     .transition(.move(edge: .trailing).combined(with: .opacity))
-                levelState.failureOrCancel()
             }
         }
         .frame(maxWidth: .infinity)
@@ -139,4 +143,5 @@ struct TictactoeLevelView: View {
 
 #Preview {
     TictactoeLevelView()
+        .environment(LevelState())
 }

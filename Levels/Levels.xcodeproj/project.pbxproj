@@ -11,6 +11,7 @@
 		9B0223932AD5F59A00D78EB1 /* TextLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0223922AD5F59A00D78EB1 /* TextLevelView.swift */; };
 		9B0223962AD5F5F100D78EB1 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0223952AD5F5F100D78EB1 /* Level.swift */; };
 		9B0223982AD5F60B00D78EB1 /* ToggleLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0223972AD5F60B00D78EB1 /* ToggleLevelView.swift */; };
+		9B0C14672AEEAB7500651BA2 /* LevelAttemptDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0C14662AEEAB7500651BA2 /* LevelAttemptDetailsView.swift */; };
 		9B1BD2802AE569770060D502 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BD27F2AE569770060D502 /* UserSettings.swift */; };
 		9B2D63612AC05FEF0077FF37 /* LevelsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2D63602AC05FEF0077FF37 /* LevelsApp.swift */; };
 		9B2D63632AC05FEF0077FF37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2D63622AC05FEF0077FF37 /* ContentView.swift */; };
@@ -33,6 +34,7 @@
 		9B0223922AD5F59A00D78EB1 /* TextLevelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextLevelView.swift; sourceTree = "<group>"; };
 		9B0223952AD5F5F100D78EB1 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		9B0223972AD5F60B00D78EB1 /* ToggleLevelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleLevelView.swift; sourceTree = "<group>"; };
+		9B0C14662AEEAB7500651BA2 /* LevelAttemptDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelAttemptDetailsView.swift; sourceTree = "<group>"; };
 		9B1BD27F2AE569770060D502 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		9B2D635D2AC05FEF0077FF37 /* Levels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Levels.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B2D63602AC05FEF0077FF37 /* LevelsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsApp.swift; sourceTree = "<group>"; };
@@ -84,7 +86,7 @@
 				9B2D63602AC05FEF0077FF37 /* LevelsApp.swift */,
 				9BE037362AD973FD009080DD /* General */,
 				9BE037352AD97350009080DD /* Levels */,
-				9B61415C2AE5AFB50099F044 /* Trials */,
+				9B61415C2AE5AFB50099F044 /* Persistence */,
 				9BE037372AD97409009080DD /* Ranking */,
 				9B2D63642AC05FF10077FF37 /* Assets.xcassets */,
 				9B2D63662AC05FF10077FF37 /* Preview Content */,
@@ -100,13 +102,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		9B61415C2AE5AFB50099F044 /* Trials */ = {
+		9B61415C2AE5AFB50099F044 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
 				9B6141672AE5BDA20099F044 /* LevelAttempt.swift */,
 				9B6141652AE5BD4B0099F044 /* SwiftDataManager.swift */,
 			);
-			path = Trials;
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 		9BE037352AD97350009080DD /* Levels */ = {
@@ -126,6 +128,7 @@
 				9B2D63622AC05FEF0077FF37 /* ContentView.swift */,
 				9B0223952AD5F5F100D78EB1 /* Level.swift */,
 				9B2D63722AC0767F0077FF37 /* LevelDetailView.swift */,
+				9B0C14662AEEAB7500651BA2 /* LevelAttemptDetailsView.swift */,
 				9B873EE42AE5461E002CD24A /* SettingsView.swift */,
 				9B6141632AE5BD290099F044 /* LevelState.swift */,
 				9B873EE62AE54634002CD24A /* LevelsOverview.swift */,
@@ -221,6 +224,7 @@
 				9B873EE72AE54634002CD24A /* LevelsOverview.swift in Sources */,
 				9B2D63732AC0767F0077FF37 /* LevelDetailView.swift in Sources */,
 				9B2D63632AC05FEF0077FF37 /* ContentView.swift in Sources */,
+				9B0C14672AEEAB7500651BA2 /* LevelAttemptDetailsView.swift in Sources */,
 				9B6141662AE5BD4B0099F044 /* SwiftDataManager.swift in Sources */,
 				9B6141682AE5BDA20099F044 /* LevelAttempt.swift in Sources */,
 				9B1BD2802AE569770060D502 /* UserSettings.swift in Sources */,

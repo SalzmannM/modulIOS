@@ -13,17 +13,21 @@ import SwiftUI
     
     private var savedInstance: UserSettings? {
         get {
-            // TODO:
-            // Check if there is data in the UserDefaults.
-            // If yes, try to decode it using a JSONDecoder and return the resulting UserSettings object.
-            // If no, return nil.
-            return nil
+            let decoder = JSONDecoder()
+            if let data = UserDefaults.standard.data(forKey: "userSettings"),
+               let decoded = try? decoder.decode(UserSettings.self, from: data) {
+                return decoded
+            } else {
+                return nil
+            }
         }
         set {
-            // TODO:
-            // Check if the newValue is nil.
-            // If yes, remove the stored object from UserDefaults.
-            // If no, use a JSONEncoder to encode the newValue to data and store the result in UserDefaults.
+            let encoder = JSONEncoder()
+            if let newValue, let encoded = try? encoder.encode(newValue) {
+                UserDefaults.standard.set(encoded, forKey: "userSettings")
+            } else {
+                UserDefaults.standard.removeObject(forKey: "userSettings")
+            }
         }
     }
     
