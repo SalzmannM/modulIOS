@@ -14,6 +14,8 @@ struct LevelDetailView: View {
     
     let level:Level
     
+    @State var rankingLoader = Networking.shared
+    
     var body: some View {
         @Bindable var levelState = levelState
 
@@ -27,28 +29,31 @@ struct LevelDetailView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .shadow(color: .black.opacity(0.3), radius: 5)
                 .padding()
-            HStack {
-                VStack {
-                    Text("Solved")
-                        .font(.caption)
-                    Text("25")
-                        .font(.title2.bold())
+            if let details = rankingLoader.levelDetails[level.id] {
+                HStack {
+                    VStack {
+                        Text("Solved")
+                            .font(.caption)
+                        Text("\(details.successCount)")
+                            .font(.title2.bold())
+                    }
+                    VStack {
+                        Text("Failed")
+                            .font(.caption)
+                        Text("\(details.failureCount)")
+                            .font(.title2.bold())
+                    }
+                    Spacer()
+                    VStack {
+                        Image(systemName: "heart")
+                            .font(.title2)
+                        Text("\(details.likes)")
+                            .font(.caption)
+                    }
                 }
-                VStack {
-                    Text("Failed")
-                        .font(.caption)
-                    Text("9")
-                        .font(.title2.bold())
-                }
-                Spacer()
-                VStack {
-                    Image(systemName: "heart")
-                        .font(.title2)
-                    Text("8")
-                        .font(.caption)
-                }
+                .padding()
             }
-            .padding()
+            
             
             VStack {
                 Button {
@@ -81,6 +86,14 @@ struct LevelDetailView: View {
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .shadow(color: .black.opacity(0.3), radius: 5)
             .padding()
+        }
+        .task {
+            do {
+                try await rankingLoader.loadDetails(level: level)
+            }
+            catch {
+                print("Failed to load details", error)
+            }
         }
         .background {
             level.titleImage

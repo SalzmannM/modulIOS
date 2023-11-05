@@ -18,6 +18,17 @@ struct SettingsView: View {
                 Section("User") {
                     TextField("Username", text: $userSettings.name)
                     TextField("Nickname", text: $userSettings.nickName)
+                    
+                    Button("Speichern") {
+                        Task {
+                            do {
+                                try await Networking.shared.updateUser(name: userSettings.name, nickname: userSettings.nickName)
+                            }
+                            catch {
+                                print("Failed to update user", error)
+                            }
+                        }
+                    }
                 }
                 Section("Erscheinungsbild") {
                     Toggle(isOn: $userSettings.alwaysUseDarkMode, label: {

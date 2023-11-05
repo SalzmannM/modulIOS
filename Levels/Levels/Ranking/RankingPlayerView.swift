@@ -8,30 +8,45 @@
 import SwiftUI
 
 struct RankingPlayerView: View {
-    let firstName: String
-    let codeName: String
-    let score: String
+    let player: Player
     var body: some View {
         HStack {
-            Image(ImageResource.player)
-                .clipShape(Circle())
-                .shadow(radius: 5)
+            AsyncImage(url: player.imageURL) { image in
+                image.resizable()
+                    .frame(width: 70, height: 70)
+            } placeholder: {
+                Rectangle()
+                    .foregroundStyle(Color.gray)
+                    .frame(width: 70, height: 70)
+                    .clipShape(Circle())
+            }
+            .shadow(radius: 10)
             VStack {
-                Text(firstName)
+                Text(player.name)
                     .font(.headline)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                Text(codeName)
+                if player.isSelf {
+                    Image(systemName: "person")
+                }
+                Text(player.nickname)
                     .font(.caption)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             Spacer ()
-            Text(score)
+            Text(String(player.score))
         }
     }
 }
 
 struct RankingPlayerView_Previews: PreviewProvider {
     static var previews: some View {
-        RankingPlayerView(firstName: "Maurice", codeName: "El Presidente", score: "100")
+        RankingPlayerView(
+            player: .init(
+                name: "Maurice",
+                score: 900,
+                nickname: "Ich",
+                id: UUID(uuidString: "d7fb3660-7e77-428d-9152-d6e5a7107f09")!
+            )
+        )
     }
 }

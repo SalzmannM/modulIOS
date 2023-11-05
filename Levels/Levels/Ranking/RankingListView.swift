@@ -8,11 +8,40 @@
 import SwiftUI
 
 struct RankingListView: View {
+    @State var networking = Networking.shared
+    @State var errorMessage: String?
+    
     var body: some View {
         List {
-            RankingPlayerView(firstName: "Maurice", codeName: "El Presidente", score: "1000")
-            RankingPlayerView(firstName: "Sepp", codeName: "El Capo", score: "900")
-            RankingPlayerView(firstName: "Anton", codeName: "El Tony", score: "1100")
+            if let errorMessage {
+                Label(errorMessage, systemImage: "exclamationmark.triangle")
+            }
+            else if let ranking = networking.ranking {
+                Section {
+                    ForEach(ranking.players){ player in
+                        RankingPlayerView(player: player)
+                    }
+                }
+            }
+            else {
+                ProgressView().progressViewStyle(.circular)
+            }
+        }
+        .task {
+            do {
+                try await networking.loadRanking()
+            }
+            catch {
+                errorMessage = error.localizedDescription
+            }
+        }
+        .refreshable {
+            do {
+                try await networking.loadRanking()
+            }
+            catch {
+                errorMessage = error.localizedDescription
+            }
         }
     }
 }
