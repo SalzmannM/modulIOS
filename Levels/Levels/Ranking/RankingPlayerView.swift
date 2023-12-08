@@ -43,8 +43,8 @@ struct RankingPlayerView_Previews: PreviewProvider {
         RankingPlayerView(
             player: .init(
                 name: "Maurice",
-                score: 900,
                 nickname: "Ich",
+                score: 900,
                 id: UUID(uuidString: "d7fb3660-7e77-428d-9152-d6e5a7107f09")!
             )
         )
